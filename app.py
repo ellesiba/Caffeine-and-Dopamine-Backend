@@ -7,7 +7,6 @@ from resources.secretmenu import menu
 DEBUG = True
 PORT = 8000
 
-
 app = Flask(__name__)
 
 @app.before_request
@@ -27,9 +26,10 @@ def after_request(response):
 CORS(menu, origins=['http://localhost:3000'], supports_credentials=True) 
 app.register_blueprint(menu, url_prefix='/api/v1/secret_menu') 
 
+# Health Check
 @app.route('/')
 def index():
-    return 'hi'
+    return 'Service is alive!!'
 
 
 
