@@ -1,4 +1,7 @@
 from peewee import *
+from flask_cors import CORS
+CORS(origins=['http://localhost:3000'], supports_credentials=True) 
+
 
 DATABASE = SqliteDatabase('secret_menu.sqlite')
 
